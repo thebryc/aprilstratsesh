@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BRYC Leadership Planning · 2026–2027</title>
+<link rel="stylesheet" href="https://use.typekit.net/oyd0hvb.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black: #0a0a0a; --white: #fff; --green: #1B4332; --green-mid: #2d6a4f;
+  --gold: #B8860B; --gold-light: #fef9c3;
+  --gray-50: #f9fafb; --gray-100: #f3f4f6; --gray-200: #e5e7eb;
+  --gray-400: #9ca3af; --gray-500: #6b7280; --gray-600: #4b5563;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'proxima-nova', 'DM Sans', sans-serif; background: var(--black); color: var(--white); min-height: 100vh; }
+
+/* ── Nav ── */
+.bryc-nav { background: var(--black); padding: 0 40px; height: 60px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 999; border-bottom: 1px solid #1f2937; }
+.bryc-nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.bryc-nav-site { font-family: 'proxima-nova', 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; color: white; letter-spacing: -.01em; }
+.bryc-nav-year { color: var(--gray-400); font-weight: 400; }
+.bryc-nav-links { display: flex; align-items: center; gap: 4px; }
+.bryc-nav-link { font-family: 'proxima-nova', 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; color: var(--gray-400); text-decoration: none; padding: 6px 14px; border-radius: 6px; transition: all .15s; }
+.bryc-nav-link:hover { color: white; background: #1f2937; }
+.bryc-nav-link.active { color: white; background: var(--green); }
+
+/* ── Hero ── */
+.hero { padding: 80px 40px 72px; max-width: 900px; margin: 0 auto; }
+.hero-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+.hero-eyebrow::before { content: ''; display: inline-block; width: 24px; height: 2px; background: var(--green); }
+.hero-title { font-family: 'proxima-nova', 'DM Sans', sans-serif; font-size: clamp(36px, 5vw, 56px); font-weight: 700; line-height: 1.1; letter-spacing: -.02em; margin-bottom: 20px; }
+.hero-title em { font-style: normal; color: #4ade80; }
+.hero-subtitle { font-size: 18px; color: var(--gray-400); font-weight: 300; line-height: 1.65; max-width: 560px; margin-bottom: 48px; }
+.hero-meta { display: flex; gap: 32px; flex-wrap: wrap; }
+.hero-meta-item { display: flex; flex-direction: column; gap: 3px; }
+.hero-meta-label { font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--gray-500); }
+.hero-meta-value { font-size: 14px; color: var(--gray-300, #d1d5db); font-weight: 500; }
+
+/* ── Cards ── */
+.cards-section { max-width: 900px; margin: 0 auto; padding: 0 40px 100px; }
+.cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 700px) { .cards-grid { grid-template-columns: 1fr; } }
+
+.page-card { border-radius: 12px; overflow: hidden; text-decoration: none; display: flex; flex-direction: column; transition: transform .2s, box-shadow .2s; border: 1px solid #1f2937; }
+.page-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,.4); }
+
+.card-accent { height: 4px; }
+.card-body { background: #111827; padding: 28px 24px 24px; flex: 1; display: flex; flex-direction: column; }
+.card-number { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gray-500); margin-bottom: 14px; }
+.card-title { font-family: 'proxima-nova', 'DM Sans', sans-serif; font-size: 20px; font-weight: 700; color: white; line-height: 1.25; margin-bottom: 10px; }
+.card-desc { font-size: 13px; color: var(--gray-400); line-height: 1.65; flex: 1; margin-bottom: 20px; }
+.card-topics { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 24px; }
+.card-topic { font-size: 11px; font-weight: 500; padding: 3px 9px; border-radius: 20px; background: #1f2937; color: var(--gray-400); }
+.card-cta { display: flex; align-items: center; justify-content: space-between; font-size: 13px; font-weight: 600; padding-top: 16px; border-top: 1px solid #1f2937; }
+.card-cta-text { color: white; }
+.card-cta-arrow { font-size: 16px; transition: transform .15s; }
+.page-card:hover .card-cta-arrow { transform: translateX(4px); }
+
+/* Card color variants */
+.card-green .card-accent { background: var(--green); }
+.card-green .card-cta-arrow { color: #4ade80; }
+.card-gold .card-accent { background: var(--gold); }
+.card-gold .card-cta-arrow { color: #fbbf24; }
+.card-blue .card-accent { background: #2563eb; }
+.card-blue .card-cta-arrow { color: #60a5fa; }
+
+/* ── Divider ── */
+.section-divider { max-width: 900px; margin: 0 auto; padding: 0 40px 32px; }
+.section-divider-line { border: none; border-top: 1px solid #1f2937; margin-bottom: 20px; }
+.section-divider-label { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--gray-500); }
+
+/* ── Footer ── */
+.site-footer { border-top: 1px solid #1f2937; padding: 24px 40px; display: flex; align-items: center; justify-content: space-between; max-width: 900px; margin: 0 auto; }
+.footer-note { font-size: 12px; color: var(--gray-500); }
+</style>
+</head>
+<body>
+
+<nav class="bryc-nav">
+  <a href="index.html" class="bryc-nav-logo">
+    <img src="Dev_Green_Circle_Logo.png" alt="BRYC" style="width:36px;height:36px;">
+    <span class="bryc-nav-site">Leadership Planning <span class="bryc-nav-year">· 2026–2027</span></span>
+  </a>
+  <div class="bryc-nav-links">
+    <a href="index.html" class="bryc-nav-link active">Home</a>
+    <a href="org-chart.html" class="bryc-nav-link">Org Chart</a>
+    <a href="staffing.html" class="bryc-nav-link">Staffing Scenarios</a>
+    <a href="fellow-journey.html" class="bryc-nav-link">Fellow Journey</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-eyebrow">Planning · Internal · Confidential</div>
+  <h1 class="hero-title">BRYC<br><em>2026–2027</em><br>Leadership Planning</h1>
+  <p class="hero-subtitle">A working set of documents covering staffing structure, organizational design, program delivery, and professional development for the coming year.</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">Program Year</span>
+      <span class="hero-meta-value">2026–2027</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">Scenario</span>
+      <span class="hero-meta-value">Scenario 1 (Prioritized)</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">Enrollment Target</span>
+      <span class="hero-meta-value">415 Fellows · 8th–11th Grade</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">Status</span>
+      <span class="hero-meta-value">In Planning</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider">
+  <hr class="section-divider-line">
+  <div class="section-divider-label">Pages</div>
+</div>
+
+<div class="cards-section">
+  <div class="cards-grid">
+
+    <a href="org-chart.html" class="page-card card-green">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-number">01</div>
+        <div class="card-title">Organizational Structure</div>
+        <div class="card-desc">Full org chart for 2026–2027 including staffing notes, peer lead relationships, staff pipeline, persistence planning, and professional development overview.</div>
+        <div class="card-topics">
+          <span class="card-topic">Org Chart</span>
+          <span class="card-topic">Staff Pipeline</span>
+          <span class="card-topic">Notes</span>
+          <span class="card-topic">Role Definitions</span>
+          <span class="card-topic">PD & Coaching</span>
+        </div>
+        <div class="card-cta">
+          <span class="card-cta-text">View org chart</span>
+          <span class="card-cta-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="staffing.html" class="page-card card-gold">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-number">02</div>
+        <div class="card-title">Program Staffing Scenarios</div>
+        <div class="card-desc">Four staffing scenarios based on ISACT status and Brei's availability. Scenario 1 is prioritized and includes full role descriptions for the learning team.</div>
+        <div class="card-topics">
+          <span class="card-topic">4 Scenarios</span>
+          <span class="card-topic">Night-Slot Modeling</span>
+          <span class="card-topic">Role Descriptions</span>
+          <span class="card-topic">Growth Trajectories</span>
+        </div>
+        <div class="card-cta">
+          <span class="card-cta-text">View scenarios</span>
+          <span class="card-cta-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="fellow-journey.html" class="page-card card-blue">
+      <div class="card-accent"></div>
+      <div class="card-body">
+        <div class="card-number">03</div>
+        <div class="card-title">Fellow Staffing Map</div>
+        <div class="card-desc">A visual map showing which staff and functions support Fellows at each stage of their journey — from entry through alumni — both at BRYC and outside.</div>
+        <div class="card-topics">
+          <span class="card-topic">Entry → Alumni</span>
+          <span class="card-topic">At BRYC</span>
+          <span class="card-topic">Outside BRYC</span>
+          <span class="card-topic">All Departments</span>
+        </div>
+        <div class="card-cta">
+          <span class="card-cta-text">View map</span>
+          <span class="card-cta-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<div class="site-footer">
+  <span class="footer-note">Baton Rouge Youth Coalition · Internal Planning Document · Confidential</span>
+  <span class="footer-note">2026–2027</span>
+</div>
+
+</body>
+</html>
