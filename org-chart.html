@@ -155,6 +155,7 @@ body{font-family:'proxima-nova','DM Sans',sans-serif;background:var(--gray-50);c
     <a href="org-chart.html" class="bryc-nav-link active">Org Chart</a>
     <a href="staffing.html" class="bryc-nav-link">Staffing Scenarios</a>
     <a href="fellow-journey.html" class="bryc-nav-link">Fellow Journey</a>
+    <a href="matriculation.html" class="bryc-nav-link">Matriculation</a>
   </div>
 </nav>
 
@@ -166,281 +167,267 @@ body{font-family:'proxima-nova','DM Sans',sans-serif;background:var(--gray-50);c
   <div class="legend">
     <div class="legend-item"><div class="ls" style="background:var(--black)"></div>CEO</div>
     <div class="legend-item"><div class="ls" style="background:var(--green)"></div>Chief</div>
-    <div class="legend-item"><div class="ls" style="background:white;border:2px solid var(--green);border-radius:3px"></div>Director</div>
+    <div class="legend-item"><div class="ls" style="background:#d1fae5;border:2px solid #6ee7b7;border-radius:3px"></div>Director</div>
     <div class="legend-item"><div class="ls" style="background:white;border:2px solid var(--gray-300);border-radius:3px"></div>Manager</div>
     <div class="legend-item"><div class="ls" style="background:var(--gray-100);border:2px dashed var(--gray-300);border-radius:3px"></div>Part-Time / Stipend</div>
     <div class="legend-item"><div class="ld" style="border-color:var(--gold)"></div><span style="color:var(--gold);font-weight:600;">Peer lead relationship</span></div>
   </div>
 
-  <div class="chart">
+  <div class="chart" style="padding:32px 24px 48px;overflow-x:auto;">
+  <style>
+  .oc-wrap{min-width:1100px;font-family:'proxima-nova','DM Sans',sans-serif;}
+  .n-ceo  {background:var(--black);color:white;}
+  .n-chief{background:var(--green);color:white;}
+  .n-dir  {background:#d1fae5;color:var(--black);border:1.5px solid #6ee7b7;}
+  .n-mgr  {background:white;color:var(--black);border:1.5px solid var(--gray-300);}
+  .n-pt   {background:var(--gray-100);color:var(--gray-600);border:1.5px dashed var(--gray-300);}
+  .n-hire {background:white;color:var(--black);border:1.5px dashed var(--gray-400);}
+  .n-alum {background:#dbeafe;color:#1e3a8a;border:1.5px dashed #93c5fd;}
+  .hl{height:2px;background:var(--gray-300);flex-shrink:0;}
+  .vl{width:2px;background:var(--gray-300);flex-shrink:0;}
+  .pb{font-size:8px;font-weight:700;color:var(--gold);background:var(--gold-light);border:1px solid var(--gold);border-radius:3px;padding:1px 4px;margin-left:3px;white-space:nowrap;}
+  .oc-entry{display:flex;flex-direction:row;align-items:flex-start;}
+  .tb{background:none;border:none;cursor:pointer;width:100%;display:flex;align-items:center;gap:6px;padding:3px 0;font-family:inherit;}
+  .tb .tl{flex:1;height:1px;background:var(--gray-200);}
+  .tb span{font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-400);white-space:nowrap;}
+  .tc{}
+  .oc-nc{font-size:9px;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:4px;padding:3px 8px;color:var(--gray-500);margin:2px 0 3px;display:inline-block;}
+  </style>
 
-    <!-- CEO -->
-    <div class="top-ceo">
-      <div class="col">
-        <div class="node n-ceo" style="min-width:180px;">
-          <span class="nb">CEO</span>
-          <div class="nn">Lucas</div>
-          <div class="nt">Chief Executive Officer</div>
+  <div class="oc-wrap">
+
+  <!-- ══ ROW 0: Lucas · Josh · Elin ══ -->
+  <div style="display:flex;flex-direction:row;align-items:flex-start;gap:0;margin-bottom:0;">
+
+    <!-- Lucas -->
+    <div style="display:flex;flex-direction:column;align-items:flex-start;">
+      <div style="display:flex;flex-direction:row;align-items:center;">
+        <div class="node n-ceo" style="min-width:145px;"><span class="nb">CEO</span><div class="nn">Lucas</div></div>
+        <div class="hl" style="width:18px;"></div>
+      </div>
+      <!-- Lucas → Alyson -->
+      <button class="tb" onclick="toggleTier(this)" style="margin-top:6px;max-width:145px;"><div class="tl"></div><span>Reports ▾</span><div class="tl"></div></button>
+      <div class="tc">
+        <div style="display:flex;flex-direction:row;align-items:flex-start;">
+          <div class="vl" style="height:38px;margin-left:72px;"></div>
+          <div style="display:flex;flex-direction:column;gap:0;">
+            <div class="oc-entry" style="margin-top:8px;">
+              <div class="hl" style="width:12px;margin-top:13px;"></div>
+              <div class="node n-dir" style="min-width:128px;"><span class="nb" style="color:#065f46;">Director</span><div class="nn">Alyson</div><div class="nt">Development</div></div>
+            </div>
+          </div>
         </div>
-        <div class="vl" style="height:20px;"></div>
-        <!-- Alyson under CEO -->
-        <div class="node n-dir" style="min-width:160px;">
-          <span class="nb" style="color:#14532d;">Director</span>
-          <div class="nn">Alyson</div>
-          <div class="nt">Director of Development</div>
-        </div>
-        <div class="vl" style="height:20px;"></div>
       </div>
     </div>
 
-    <!-- Horizontal bar spanning both chiefs -->
-    <div style="display:flex;justify-content:center;padding:0 12%;">
-      <div class="hl" style="width:100%;"></div>
-    </div>
+    <!-- Josh -->
+    <div style="display:flex;flex-direction:column;align-items:flex-start;margin-top:0;">
+      <div class="node n-chief" style="min-width:150px;"><span class="nb">Chief of Staff</span><div class="nn">Josh Howard</div></div>
+      <!-- Josh → Myeisha, Marcus, Forrest, Alexis, TBD Persistence -->
+      <button class="tb" onclick="toggleTier(this)" style="margin-top:6px;"><div class="tl"></div><span>Directors & Managers ▾</span><div class="tl"></div></button>
+      <div class="tc">
+        <div style="display:flex;flex-direction:row;align-items:flex-start;">
+          <div class="vl" style="height:870px;margin-left:75px;"></div>
+          <div style="display:flex;flex-direction:column;gap:0;">
 
-    <!-- Two-column chiefs -->
-    <div class="chiefs-row">
-
-      <!-- ═══ COS: Josh ═══ -->
-      <div class="chief-col">
-        <div class="vl" style="height:0;"></div>
-        <div class="node n-chief" style="min-width:180px;">
-          <span class="nb">Chief of Staff</span>
-          <div class="nn">Josh Howard</div>
-        </div>
-
-        <!-- Directors under COS -->
-        <button class="tier-btn" onclick="toggleTier(this)">
-          <div class="tl"></div><span>Directors ▾</span><div class="tl"></div>
-        </button>
-        <div class="tier-content">
-          <div class="chief-to-dirs"></div>
-          <div class="dir-row">
-
-            <div class="dir-entry">
-              <div class="vl" style="height:16px;"></div>
-              <div class="node n-dir" style="min-width:130px;">
-                <span class="nb" style="color:#14532d;">Director</span>
-                <div class="nn">Marcus</div>
-                <div class="nt">Director of Operations</div>
-              </div>
-              <!-- Marcus PT reports -->
-              <div class="vl" style="height:12px;"></div>
-              <div style="position:relative;width:230px;"><div class="hl"></div></div>
-              <div class="row" style="gap:6px;">
-                <div class="col" style="align-items:center;">
-                  <div class="vl" style="height:10px;"></div>
-                  <div class="node n-pt" style="min-width:105px;"><span class="nb">PT · Ops</span><div class="nn" style="font-size:11px;">Naudra</div><div class="nt">Bus Driver</div></div>
-                </div>
-                <div class="col" style="align-items:center;">
-                  <div class="vl" style="height:10px;"></div>
-                  <div class="node n-pt" style="min-width:105px;"><span class="nb">PT · Ops</span><div class="nn" style="font-size:11px;">Ops Associates</div><div class="nt">Work-Study & BRYC-paid</div></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="dir-entry">
-              <div class="vl" style="height:16px;"></div>
-              <div class="node n-dir" style="min-width:130px;">
-                <span class="nb" style="color:#14532d;">Director</span>
-                <div class="nn">Forrest</div>
-                <div class="nt">Director of Fellow Recruitment</div>
-              </div>
-            </div>
-
-            <div class="dir-entry">
-              <div class="vl" style="height:16px;"></div>
-              <div class="node n-dir" style="min-width:130px;">
-                <span class="nb" style="color:#14532d;">Director</span>
-                <div class="nn">Myeisha</div>
-                <div class="nt">Deputy Chief of Staff</div>
-              </div>
-            </div>
-
-          </div><!-- end dir-row COS -->
-        </div><!-- end directors tier -->
-
-        <!-- Managers under COS -->
-        <button class="tier-btn" onclick="toggleTier(this)" style="margin-top:16px;">
-          <div class="tl"></div><span>Managers ▾</span><div class="tl"></div>
-        </button>
-        <div class="tier-content">
-          <div style="position:relative;width:60%;margin:0 auto;"><div class="vl" style="height:16px;margin:0 auto;"></div><div class="hl"></div></div>
-          <div class="row" style="justify-content:center;gap:12px;align-items:flex-start;">
-
-            <div class="mgr-entry">
-              <div class="vl" style="height:16px;"></div>
-              <div class="node n-mgr" style="min-width:140px;">
-                <span class="nb">Manager</span>
-                <div class="nn">Angela</div>
-                <div class="nt">Community Engagement Manager</div>
-                <div class="nnt">Director-level scope; title under review</div>
-              </div>
-            </div>
-
-            <div class="mgr-entry">
-              <div class="vl" style="height:16px;"></div>
-              <div class="node n-mgr" style="min-width:140px;">
-                <span class="nb">Manager</span>
-                <div class="nn">Alexis</div>
-                <div class="nt">Persistence Manager</div>
-              </div>
-              <div class="vl" style="height:8px;"></div>
-              <div class="node n-hire" style="min-width:140px;"><span class="nb">Manager · TBD</span><div class="nn">Persistence Manager</div><div class="nt">Structure in progress</div></div>
-              <div class="vl" style="height:8px;"></div>
-              <div class="node n-alum" style="min-width:140px;"><span class="nb" style="color:#1e40af;">Stipend</span><div class="nn" style="font-size:11px;">Alumni Hub Leads</div><div class="nt">3–4 alums · monthly groups</div></div>
-            </div>
-
-          </div>
-        </div><!-- end managers tier COS -->
-
-        <!-- Peer leads note box -->
-        <div style="margin-top:20px;background:var(--gold-light);border:1px solid var(--gold);border-radius:6px;padding:10px 14px;font-size:11px;color:#713f12;text-align:center;max-width:340px;">
-          <strong style="display:block;font-size:9px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;color:#92400e;">Peer Leads → COS (HR/Mgmt)</strong>
-          Chasity, Jakia & Rhonda bring HR/mgmt matters to Josh. Curriculum matters go to Elin.
-        </div>
-
-      </div><!-- end COS col -->
-
-      <!-- ═══ COP: Elin ═══ -->
-      <div class="chief-col">
-        <div class="node n-chief" style="min-width:180px;">
-          <span class="nb">Chief of Product</span>
-          <div class="nn">Elin</div>
-        </div>
-
-        <!-- Directors under COP -->
-        <button class="tier-btn" onclick="toggleTier(this)">
-          <div class="tl"></div><span>Directors ▾</span><div class="tl"></div>
-        </button>
-        <div class="tier-content">
-          <div class="chief-to-dirs"></div>
-          <div class="dir-row">
-
-            <div class="dir-entry">
-              <div class="vl" style="height:16px;"></div>
-              <div class="node n-dir" style="min-width:130px;">
-                <span class="nb" style="color:#14532d;">Director</span>
-                <div class="nn">Chasity</div>
-                <div class="nt">Director of Programs</div>
-                <div class="nnt">0 teaching nights</div>
-              </div>
-            </div>
-
-            <div class="dir-entry">
-              <div class="vl" style="height:16px;"></div>
-              <div class="node n-dir" style="min-width:130px;">
-                <span class="nb" style="color:#14532d;">Director</span>
-                <div class="nn">Aareena</div>
-                <div class="nt">Director of ACT</div>
-                <div class="nnt">1 ACT teaching night</div>
-              </div>
-            </div>
-
-            <div class="dir-entry">
-              <div class="vl" style="height:16px;"></div>
-              <div class="node n-dir" style="min-width:130px;">
-                <span class="nb" style="color:#14532d;">Director</span>
-                <div class="nn">Jakia</div>
-                <div class="nt">Director of Senior Counseling</div>
-              </div>
-            </div>
-
-            <div class="dir-entry">
-              <div class="vl" style="height:16px;"></div>
-              <div class="node n-dir" style="min-width:130px;">
-                <span class="nb" style="color:#14532d;">Director</span>
-                <div class="nn">Rhonda</div>
-                <div class="nt">Director of Advising</div>
-              </div>
-            </div>
-
-          </div><!-- end dir-row COP -->
-
-          <!-- Peer lead lines -->
-          <div style="margin-top:10px;display:flex;align-items:center;justify-content:center;width:80%;margin-left:auto;margin-right:auto;">
-            <div class="peer-chip">Chasity</div><div class="peer-dash"></div><div class="peer-word">PEER</div><div class="peer-dash"></div><div class="peer-chip">Aareena</div>
-            <div style="width:32px;"></div>
-            <div class="peer-chip">Jakia</div><div class="peer-dash"></div><div class="peer-word">PEER</div><div class="peer-dash"></div><div class="peer-chip">Rhonda</div>
-          </div>
-        </div><!-- end directors tier COP -->
-
-        <!-- Managers under COP -->
-        <button class="tier-btn" onclick="toggleTier(this)" style="margin-top:16px;">
-          <div class="tl"></div><span>Managers ▾</span><div class="tl"></div>
-        </button>
-        <div class="tier-content">
-          <div class="vl" style="height:16px;"></div>
-          <!-- Four sub-columns, one per director -->
-          <div class="row" style="width:100%;justify-content:space-between;align-items:flex-start;gap:8px;">
-
-            <!-- Under Chasity -->
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
-              <div style="font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:6px;">Under Chasity</div>
-              <div style="position:relative;width:95%;"><div class="hl"></div></div>
-              <div class="row" style="gap:5px;justify-content:center;align-items:flex-start;">
-                <div class="col" style="align-items:center;">
-                  <div class="vl" style="height:12px;"></div>
-                  <div class="node n-mgr" style="min-width:110px;"><span class="nb">Manager</span><div class="nn">Kendrick</div><div class="nt">8th Grade & Career Communities</div></div>
-                  <div class="vl" style="height:8px;"></div>
-                  <div style="position:relative;width:210px;"><div class="hl"></div></div>
-                  <div class="row" style="gap:4px;">
-                    <div class="col" style="align-items:center;"><div class="vl" style="height:8px;"></div><div class="node n-pt" style="min-width:90px;"><span class="nb">PT · Trigger</span><div class="nn" style="font-size:10px;">PT Learning Mgr</div></div></div>
-                    <div class="col" style="align-items:center;"><div class="vl" style="height:8px;"></div><div class="node n-pt" style="min-width:90px;"><span class="nb">PT · Subs</span><div class="nn" style="font-size:10px;">Sub Learning Mgrs</div><div class="nt">ACT + SRL trained</div></div></div>
+            <!-- Myeisha -->
+            <div class="oc-entry" style="margin-top:12px;">
+              <div class="hl" style="width:14px;margin-top:13px;"></div>
+              <div style="display:flex;flex-direction:column;">
+                <div class="node n-dir" style="min-width:130px;"><span class="nb" style="color:#065f46;">Director</span><div class="nn">Myeisha</div><div class="nt">Deputy Chief of Staff</div></div>
+                <!-- Myeisha → Angela -->
+                <button class="tb" onclick="toggleTier(this)"><div class="tl"></div><span>Reports ▾</span><div class="tl"></div></button>
+                <div class="tc">
+                  <div style="display:flex;flex-direction:row;align-items:flex-start;">
+                    <div class="vl" style="height:55px;margin-left:65px;"></div>
+                    <div style="display:flex;flex-direction:column;gap:0;">
+                      <div class="oc-entry" style="margin-top:8px;">
+                        <div class="hl" style="width:12px;margin-top:13px;"></div>
+                        <div style="display:flex;flex-direction:column;">
+                          <div class="node n-dir" style="min-width:122px;"><span class="nb" style="color:#065f46;">Director</span><div class="nn">Angela</div><div class="nt">Community Engagement</div><div class="nnt">Director-level scope</div></div>
+                          <!-- Angela → Intern -->
+                          <button class="tb" onclick="toggleTier(this)"><div class="tl"></div><span>PT ▾</span><div class="tl"></div></button>
+                          <div class="tc">
+                            <div style="display:flex;flex-direction:row;align-items:flex-start;">
+                              <div class="vl" style="height:36px;margin-left:61px;"></div>
+                              <div style="display:flex;flex-direction:column;gap:0;">
+                                <div class="oc-entry" style="margin-top:6px;"><div class="hl" style="width:10px;margin-top:11px;"></div><div class="node n-pt" style="min-width:100px;"><span class="nb">Intern</span><div class="nn" style="font-size:10px;">Intern</div><div class="nt">→ Angela</div></div></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="col" style="align-items:center;">
-                  <div class="vl" style="height:12px;"></div>
-                  <div class="node n-mgr" style="min-width:110px;"><span class="nb">Manager</span><div class="nn">Lauren</div><div class="nt">11th Grade · Health Fellows</div><div class="teach">ACT + SRL</div></div>
-                </div>
-                <div class="col" style="align-items:center;">
-                  <div class="vl" style="height:12px;"></div>
-                  <div class="node n-hire" style="min-width:110px;"><span class="nb">Manager · Hire</span><div class="nn">New FT Hire</div><div class="nt">9/10th Grade · 4 nights</div><div class="teach">ACT + SRL</div></div>
+              </div>
+            </div>
+
+            <!-- Marcus -->
+            <div class="oc-entry" style="margin-top:14px;">
+              <div class="hl" style="width:14px;margin-top:13px;"></div>
+              <div style="display:flex;flex-direction:column;">
+                <div class="node n-dir" style="min-width:130px;"><span class="nb" style="color:#065f46;">Director</span><div class="nn">Marcus</div><div class="nt">Operations</div></div>
+                <button class="tb" onclick="toggleTier(this)"><div class="tl"></div><span>PT ▾</span><div class="tl"></div></button>
+                <div class="tc">
+                  <div style="display:flex;flex-direction:row;align-items:flex-start;">
+                    <div class="vl" style="height:56px;margin-left:65px;"></div>
+                    <div style="display:flex;flex-direction:column;gap:0;">
+                      <div class="oc-entry" style="margin-top:8px;"><div class="hl" style="width:12px;margin-top:11px;"></div><div class="node n-pt" style="min-width:110px;"><span class="nb">PT</span><div class="nn" style="font-size:10px;">Naudra</div><div class="nt">Bus Driver</div></div></div>
+                      <div class="oc-entry" style="margin-top:6px;"><div class="hl" style="width:12px;margin-top:11px;"></div><div class="node n-pt" style="min-width:110px;"><span class="nb">PT</span><div class="nn" style="font-size:10px;">Ops Associates</div><div class="nt">Work-Study & BRYC-paid</div></div></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <!-- Under Aareena -->
-            <div style="flex:0 0 90px;display:flex;flex-direction:column;align-items:center;">
-              <div style="font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:6px;">Aareena</div>
-              <div style="font-size:10px;color:var(--gray-400);font-style:italic;text-align:center;">No direct reports</div>
+            <!-- Forrest -->
+            <div class="oc-entry" style="margin-top:14px;">
+              <div class="hl" style="width:14px;margin-top:13px;"></div>
+              <div class="node n-dir" style="min-width:130px;"><span class="nb" style="color:#065f46;">Director</span><div class="nn">Forrest</div><div class="nt">Fellow Recruitment</div></div>
             </div>
 
-            <!-- Under Jakia -->
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
-              <div style="font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:6px;">Under Jakia</div>
-              <div style="position:relative;width:95%;"><div class="hl"></div></div>
-              <div class="row" style="gap:5px;justify-content:center;align-items:flex-start;">
-                <div class="col" style="align-items:center;"><div class="vl" style="height:12px;"></div><div class="node n-mgr" style="min-width:100px;"><span class="nb">Manager</span><div class="nn">Rachel</div><div class="nt">Sr. Counselor (Writing Lead)</div></div></div>
-                <div class="col" style="align-items:center;"><div class="vl" style="height:12px;"></div><div class="node n-mgr" style="min-width:100px;"><span class="nb">Manager</span><div class="nn">Mychell</div><div class="nt">Senior Counselor</div></div></div>
-                <div class="col" style="align-items:center;"><div class="vl" style="height:12px;"></div><div class="node n-mgr" style="min-width:100px;"><span class="nb">Manager</span><div class="nn">Tim</div><div class="nt">Senior Counselor</div></div></div>
-              </div>
-            </div>
-
-            <!-- Under Rhonda -->
-            <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
-              <div style="font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:6px;">Under Rhonda</div>
-              <div style="position:relative;width:95%;"><div class="hl"></div></div>
-              <div class="row" style="gap:5px;justify-content:center;align-items:flex-start;">
-                <div class="col" style="align-items:center;">
-                  <div class="vl" style="height:12px;"></div>
-                  <div class="node n-mgr" style="min-width:95px;"><span class="nb">Manager</span><div class="nn">Tavidee</div><div class="nt">Advisor</div></div>
-                  <div class="vl" style="height:6px;"></div>
-                  <div class="node n-pt" style="min-width:95px;"><span class="nb">PT</span><div class="nn" style="font-size:10px;">Alumni Advisors</div><div class="nt">1–2 positions</div></div>
+            <!-- Alexis -->
+            <div class="oc-entry" style="margin-top:14px;">
+              <div class="hl" style="width:14px;margin-top:13px;"></div>
+              <div style="display:flex;flex-direction:column;">
+                <div class="node n-mgr" style="min-width:130px;"><span class="nb">Manager</span><div class="nn">Alexis</div><div class="nt">Persistence Manager</div></div>
+                <button class="tb" onclick="toggleTier(this)"><div class="tl"></div><span>Reports ▾</span><div class="tl"></div></button>
+                <div class="tc">
+                  <div style="display:flex;flex-direction:row;align-items:flex-start;">
+                    <div class="vl" style="height:56px;margin-left:65px;"></div>
+                    <div style="display:flex;flex-direction:column;gap:0;">
+                      <div class="oc-entry" style="margin-top:8px;"><div class="hl" style="width:12px;margin-top:11px;"></div><div class="node n-alum" style="min-width:110px;"><span class="nb" style="color:#1e40af;">Stipend</span><div class="nn" style="font-size:10px;">Alumni Hub Leads</div><div class="nt">3–4 alums</div></div></div>
+                      <div class="oc-entry" style="margin-top:6px;"><div class="hl" style="width:12px;margin-top:11px;"></div><div class="node n-pt" style="min-width:110px;"><span class="nb">Intern</span><div class="nn" style="font-size:10px;">Intern</div><div class="nt">→ Alexis</div></div></div>
+                    </div>
+                  </div>
                 </div>
-                <div class="col" style="align-items:center;"><div class="vl" style="height:12px;"></div><div class="node n-mgr" style="min-width:95px;"><span class="nb">Manager</span><div class="nn">Richard</div><div class="nt">Advisor</div></div></div>
-                <div class="col" style="align-items:center;"><div class="vl" style="height:12px;"></div><div class="node n-mgr" style="min-width:95px;"><span class="nb">Manager</span><div class="nn">Kirsten</div><div class="nt">Advisor</div><div class="teach">+ 1 ACT night</div></div></div>
-                <div class="col" style="align-items:center;"><div class="vl" style="height:12px;"></div><div class="node n-hire" style="min-width:95px;"><span class="nb">Optional</span><div class="nn">Ni'Ja</div><div class="nt">Advisor + RAM Support</div></div></div>
               </div>
+            </div>
+
+            <!-- TBD Persistence Manager (reports to Josh, not Alexis) -->
+            <div class="oc-entry" style="margin-top:14px;">
+              <div class="hl" style="width:14px;margin-top:13px;"></div>
+              <div class="node n-hire" style="min-width:130px;"><span class="nb">Manager · TBD</span><div class="nn">Persistence Mgr</div><div class="nt">Structure in progress</div></div>
             </div>
 
           </div>
-        </div><!-- end managers tier COP -->
+        </div>
+      </div>
+    </div>
 
-      </div><!-- end COP col -->
+    <!-- spacer -->
+    <div style="width:32px;"></div>
 
-    </div><!-- end chiefs-row -->
+    <!-- Elin — floats -->
+    <div style="display:flex;flex-direction:column;align-items:flex-start;">
+      <div class="node n-chief" style="min-width:150px;"><span class="nb">Chief of Product</span><div class="nn">Elin</div><div class="nt">Curriculum · App</div></div>
+      <div class="oc-nc">Curriculum → Elin · HR/mgmt → Josh</div>
+      <div style="font-size:10px;color:var(--gray-400);font-style:italic;margin-top:2px;">No direct reports</div>
+    </div>
+
+  </div><!-- end top row -->
+
+  <!-- ══ DIRECTOR TIER: Chasity, Aareena, Jakia, Rhonda ══ -->
+  <div style="margin-top:32px;">
+    <button class="tb" onclick="toggleTier(this)"><div class="tl"></div><span>Program Directors (Curriculum → Elin · HR/mgmt → Josh) ▾</span><div class="tl"></div></button>
+    <div class="tc">
+      <div style="display:flex;flex-direction:row;align-items:flex-start;">
+        <div class="vl" style="height:940px;margin-left:4px;"></div>
+        <div style="display:flex;flex-direction:column;gap:0;">
+
+          <!-- Chasity -->
+          <div class="oc-entry" style="margin-top:12px;">
+            <div class="hl" style="width:14px;margin-top:13px;"></div>
+            <div style="display:flex;flex-direction:column;">
+              <div class="node n-dir" style="min-width:132px;"><span class="nb" style="color:#065f46;">Director <span class="pb">↔ Aareena</span></span><div class="nn">Chasity</div><div class="nt">Director of Programs</div></div>
+              <button class="tb" onclick="toggleTier(this)"><div class="tl"></div><span>Learning Team ▾</span><div class="tl"></div></button>
+              <div class="tc">
+                <div style="display:flex;flex-direction:row;align-items:flex-start;">
+                  <div class="vl" style="height:232px;margin-left:66px;"></div>
+                  <div style="display:flex;flex-direction:column;gap:0;">
+                    <div class="oc-entry" style="margin-top:8px;">
+                      <div class="hl" style="width:12px;margin-top:13px;"></div>
+                      <div style="display:flex;flex-direction:column;">
+                        <div class="node n-mgr" style="min-width:110px;"><span class="nb">Manager</span><div class="nn">Kendrick</div><div class="nt">YPAR and SRL</div></div>
+                        <button class="tb" onclick="toggleTier(this)"><div class="tl"></div><span>PT ▾</span><div class="tl"></div></button>
+                        <div class="tc">
+                          <div style="display:flex;flex-direction:row;align-items:flex-start;">
+                            <div class="vl" style="height:56px;margin-left:55px;"></div>
+                            <div style="display:flex;flex-direction:column;gap:0;">
+                              <div class="oc-entry" style="margin-top:6px;"><div class="hl" style="width:10px;margin-top:10px;"></div><div class="node n-pt" style="min-width:96px;"><span class="nb">PT · Trigger</span><div class="nn" style="font-size:10px;">Learning Mgr</div></div></div>
+                              <div class="oc-entry" style="margin-top:5px;"><div class="hl" style="width:10px;margin-top:10px;"></div><div class="node n-pt" style="min-width:96px;"><span class="nb">PT · Subs</span><div class="nn" style="font-size:10px;">Sub Learning Mgrs</div></div></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="oc-entry" style="margin-top:6px;"><div class="hl" style="width:12px;margin-top:13px;"></div><div class="node n-mgr" style="min-width:110px;"><span class="nb">Manager</span><div class="nn">Lauren</div><div class="nt">ACT</div></div></div>
+                    <div class="oc-entry" style="margin-top:6px;"><div class="hl" style="width:12px;margin-top:13px;"></div><div class="node n-hire" style="min-width:110px;"><span class="nb">Manager · TBD</span><div class="nn">Learning Mgr</div><div class="nt">9/10th · 4 nights</div><div class="teach">ACT + SRL</div></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aareena -->
+          <div class="oc-entry" style="margin-top:14px;">
+            <div class="hl" style="width:14px;margin-top:13px;"></div>
+            <div style="display:flex;flex-direction:row;align-items:center;gap:10px;">
+              <div class="node n-dir" style="min-width:132px;"><span class="nb" style="color:#065f46;">Director <span class="pb">↔ Chasity</span></span><div class="nn">Aareena</div><div class="nt">Director of ACT</div></div>
+              <span style="font-size:10px;color:var(--gray-400);font-style:italic;">No direct reports</span>
+            </div>
+          </div>
+
+          <!-- Jakia -->
+          <div class="oc-entry" style="margin-top:14px;">
+            <div class="hl" style="width:14px;margin-top:13px;"></div>
+            <div style="display:flex;flex-direction:column;">
+              <div class="node n-dir" style="min-width:132px;"><span class="nb" style="color:#065f46;">Director <span class="pb">↔ Rhonda</span></span><div class="nn">Jakia</div><div class="nt">Senior Counseling</div></div>
+              <button class="tb" onclick="toggleTier(this)"><div class="tl"></div><span>Managers ▾</span><div class="tl"></div></button>
+              <div class="tc">
+                <div style="display:flex;flex-direction:row;align-items:flex-start;">
+                  <div class="vl" style="height:112px;margin-left:66px;"></div>
+                  <div style="display:flex;flex-direction:column;gap:0;">
+                    <div class="oc-entry" style="margin-top:8px;"><div class="hl" style="width:12px;margin-top:13px;"></div><div class="node n-mgr" style="min-width:110px;"><span class="nb">Manager</span><div class="nn">Rachel</div><div class="nt">Sr. Counselor (Writing)</div></div></div>
+                    <div class="oc-entry" style="margin-top:6px;"><div class="hl" style="width:12px;margin-top:13px;"></div><div class="node n-mgr" style="min-width:110px;"><span class="nb">Manager</span><div class="nn">Mychell</div><div class="nt">Senior Counselor</div></div></div>
+                    <div class="oc-entry" style="margin-top:6px;"><div class="hl" style="width:12px;margin-top:13px;"></div><div class="node n-mgr" style="min-width:110px;"><span class="nb">Manager</span><div class="nn">Tim</div><div class="nt">Senior Counselor</div></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rhonda -->
+          <div class="oc-entry" style="margin-top:14px;">
+            <div class="hl" style="width:14px;margin-top:13px;"></div>
+            <div style="display:flex;flex-direction:column;">
+              <div class="node n-dir" style="min-width:132px;"><span class="nb" style="color:#065f46;">Director <span class="pb">↔ Jakia</span></span><div class="nn">Rhonda</div><div class="nt">Advising</div></div>
+              <button class="tb" onclick="toggleTier(this)"><div class="tl"></div><span>Advisors ▾</span><div class="tl"></div></button>
+              <div class="tc">
+                <div style="display:flex;flex-direction:row;align-items:flex-start;">
+                  <div class="vl" style="height:172px;margin-left:66px;"></div>
+                  <div style="display:flex;flex-direction:column;gap:0;">
+                    <div class="oc-entry" style="margin-top:8px;"><div class="hl" style="width:12px;margin-top:13px;"></div><div class="node n-mgr" style="min-width:110px;"><span class="nb">Manager</span><div class="nn">Tavidee</div><div class="nt">Advisor</div></div></div>
+                    <div class="oc-entry" style="margin-top:6px;"><div class="hl" style="width:12px;margin-top:13px;"></div><div class="node n-mgr" style="min-width:110px;"><span class="nb">Manager</span><div class="nn">Kirsten</div><div class="nt">Advisor</div></div></div>
+                    <div class="oc-entry" style="margin-top:6px;"><div class="hl" style="width:12px;margin-top:13px;"></div><div class="node n-mgr" style="min-width:110px;"><span class="nb">Manager</span><div class="nn">Richard</div><div class="nt">Advisor</div></div></div>
+                    <div class="oc-entry" style="margin-top:6px;"><div class="hl" style="width:12px;margin-top:13px;"></div><div class="node n-hire" style="min-width:110px;"><span class="nb">Open</span><div class="nn">Advisor · TBD</div></div></div>
+                    <div class="oc-entry" style="margin-top:6px;"><div class="hl" style="width:12px;margin-top:13px;"></div><div class="node n-pt" style="min-width:110px;"><span class="nb">PT</span><div class="nn" style="font-size:10px;">Alumni Advisors</div><div class="nt">4–5 positions</div></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- end program directors tc -->
+  </div>
+
+  </div><!-- end oc-wrap -->
   </div><!-- end chart -->
+
+
 
   <!-- NOTES SECTION — categorized -->
   <div class="section-wrap">
@@ -569,7 +556,7 @@ body{font-family:'proxima-nova','DM Sans',sans-serif;background:var(--gray-50);c
             <div style="background:#93c5fd;color:#1e3a8a;border-radius:4px;font-size:9px;font-weight:700;padding:2px 7px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;margin-top:1px;">PT</div>
             <div>
               <div style="font-size:13px;font-weight:700;color:var(--black);">Alumni Advisors</div>
-              <div style="font-size:12px;color:var(--gray-600);margin-top:2px;">1–2 positions · could be managed by Tavidee</div>
+              <div style="font-size:12px;color:var(--gray-600);margin-top:2px;">4–5 positions · could be managed by Tavidee</div>
             </div>
           </div>
           <div style="display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:#eff6ff;border-radius:6px;border:1px dashed #93c5fd;">
@@ -595,7 +582,7 @@ body{font-family:'proxima-nova','DM Sans',sans-serif;background:var(--gray-50);c
       <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#c2410c;margin-bottom:10px;">Conversations to Have</div>
       <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--gray-600);line-height:1.6;">
         <div style="background:#c2410c;color:white;border-radius:4px;font-size:9px;font-weight:700;padding:2px 7px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;margin-top:2px;">ISACT Team</div>
-        <div>Aareena, Ni'Ja, and Kirsten — conversation needed about roles, expectations, and structure for the 2026–2027 year given the current ISACT status. All three have ties to in-school programming and need clarity on what their roles look like in Scenario 1.</div>
+        <div>Aareena and Ni'Ja — conversation needed about roles, expectations, and structure for the 2026–2027 year. Kirsten's move to full-time Advising is confirmed. Aareena and Ni'Ja still need clarity on what their roles look like.</div>
       </div>
     </div>
 
