@@ -42,7 +42,7 @@ body { font-family: 'proxima-nova', 'DM Sans', sans-serif; background: var(--bla
 
 /* ── Cards ── */
 .cards-section { max-width: 900px; margin: 0 auto; padding: 0 40px 100px; }
-.cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.cards-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 @media (max-width: 700px) { .cards-grid { grid-template-columns: 1fr; } }
 
 .page-card { border-radius: 12px; overflow: hidden; text-decoration: none; display: flex; flex-direction: column; transition: transform .2s, box-shadow .2s; border: 1px solid #1f2937; }
@@ -78,7 +78,19 @@ body { font-family: 'proxima-nova', 'DM Sans', sans-serif; background: var(--bla
 .footer-note { font-size: 12px; color: var(--gray-500); }
 </style>
 </head>
-<body>
+<body><script>
+(function(){
+  var k = sessionStorage.getItem('bryc_auth');
+  if(k !== 'buffin27'){
+    var p = prompt('Enter password to access this page:');
+    if(p !== 'buffin27'){
+      document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;background:#0a0a0a;color:#9ca3af;font-size:14px;">Access denied.</div>';
+      return;
+    }
+    sessionStorage.setItem('bryc_auth','buffin27');
+  }
+})();
+</script>
 
 <nav class="bryc-nav">
   <a href="index.html" class="bryc-nav-logo">
@@ -90,6 +102,7 @@ body { font-family: 'proxima-nova', 'DM Sans', sans-serif; background: var(--bla
     <a href="org-chart.html" class="bryc-nav-link">Org Chart</a>
     <a href="staffing.html" class="bryc-nav-link">Staffing Scenarios</a>
     <a href="fellow-journey.html" class="bryc-nav-link">Fellow Journey</a>
+    <a href="matriculation.html" class="bryc-nav-link">Matriculation</a>
   </div>
 </nav>
 
@@ -179,6 +192,25 @@ body { font-family: 'proxima-nova', 'DM Sans', sans-serif; background: var(--bla
         <div class="card-cta">
           <span class="card-cta-text">View map</span>
           <span class="card-cta-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="matriculation.html" class="page-card" style="border-color:#1f2937;">
+      <div class="card-accent" style="background:#0891b2;"></div>
+      <div class="card-body">
+        <div class="card-number">04</div>
+        <div class="card-title">Matriculation Timeline</div>
+        <div class="card-desc">The full arc from application deadline through orientation — who does what, when. Covers both the Senior track (April) and 8th–11th grade track (June), plus the division of labor across Forrest, Chasity, Angela, and Marcus.</div>
+        <div class="card-topics">
+          <span class="card-topic">April → August</span>
+          <span class="card-topic">Two Tracks</span>
+          <span class="card-topic">Roles & Owners</span>
+          <span class="card-topic">Matriculation Hub</span>
+        </div>
+        <div class="card-cta">
+          <span class="card-cta-text">View timeline</span>
+          <span class="card-cta-arrow" style="color:#0891b2;">→</span>
         </div>
       </div>
     </a>
