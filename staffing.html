@@ -118,7 +118,19 @@ body { font-family: 'proxima-nova', 'DM Sans', sans-serif; background: var(--whi
 }
 </style>
 </head>
-<body>
+<body><script>
+(function(){
+  var k = sessionStorage.getItem('bryc_auth');
+  if(k !== 'buffin27'){
+    var p = prompt('Enter password to access this page:');
+    if(p !== 'buffin27'){
+      document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;background:#0a0a0a;color:#9ca3af;font-size:14px;">Access denied.</div>';
+      return;
+    }
+    sessionStorage.setItem('bryc_auth','buffin27');
+  }
+})();
+</script>
 <link rel="stylesheet" href="https://use.typekit.net/oyd0hvb.css">
 <style>
 .bryc-nav{background:#0a0a0a;padding:0 40px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:999;border-bottom:1px solid #1f2937;}
@@ -140,6 +152,7 @@ body { font-family: 'proxima-nova', 'DM Sans', sans-serif; background: var(--whi
     <a href="org-chart.html" class="bryc-nav-link">Org Chart</a>
     <a href="staffing.html" class="bryc-nav-link active">Staffing Scenarios</a>
     <a href="fellow-journey.html" class="bryc-nav-link">Fellow Journey</a>
+    <a href="matriculation.html" class="bryc-nav-link">Matriculation</a>
   </div>
 </nav>
 
@@ -190,14 +203,14 @@ body { font-family: 'proxima-nova', 'DM Sans', sans-serif; background: var(--whi
       <span class="badge badge-gray">★ Prioritized</span>
     </div>
     <div class="stats-row">
-      <div class="stat-card highlight"><div class="stat-number">12</div><div class="stat-label">Night-slots available</div></div>
-      <div class="stat-card"><div class="stat-number">360</div><div class="stat-label">Max capacity (30/slot)</div></div>
+      <div class="stat-card highlight"><div class="stat-number">10</div><div class="stat-label">Night-slots available</div></div>
+      <div class="stat-card"><div class="stat-number">300</div><div class="stat-label">Max capacity (30/slot)</div></div>
       <div class="stat-card"><div class="stat-number">1</div><div class="stat-label">New FT hire needed</div></div>
       <div class="stat-card caution"><div class="stat-number">+PT</div><div class="stat-label">If enrollment hits 360</div></div>
     </div>
     <div style="margin-bottom:32px;">
       <div class="section-label">Enrollment coverage</div>
-      <div class="cap-wrap"><div class="cap-fill" style="width:86.7%"><div class="cap-target" data-label="415 target"></div></div></div>
+      <div class="cap-wrap"><div class="cap-fill" style="width:72.3%"><div class="cap-target" data-label="415 target"></div></div></div>
       <div class="cap-legend"><span>0</span><span>360 capacity</span><span>415 target</span></div>
     </div>
     <div class="section-label">Staff & night assignments</div>
@@ -206,14 +219,14 @@ body { font-family: 'proxima-nova', 'DM Sans', sans-serif; background: var(--whi
       <tbody>
         <tr><td><div class="person-name">Lauren</div><div class="person-role">Learning Manager</div></td><td><div class="night-dots"><div class="dot">M</div><div class="dot">T</div><div class="dot">W</div><div class="dot empty">–</div></div></td><td style="text-align:center"><span class="night-count">3</span></td><td><span class="status-tag status-returning">Returning FT</span></td><td style="font-size:13px;color:var(--gray-600)">Core anchor · 11th grade</td></tr>
         <tr><td><div class="person-name">Kendrick</div><div class="person-role">Learning Manager</div></td><td><div class="night-dots"><div class="dot">M</div><div class="dot">T</div><div class="dot">W</div><div class="dot empty">–</div></div></td><td style="text-align:center"><span class="night-count">3</span></td><td><span class="status-tag status-returning">Returning FT</span></td><td style="font-size:13px;color:var(--gray-600)">Staying FT ✓ · 8th grade + career programs</td></tr>
-        <tr><td><div class="person-name">Kirsten</div><div class="person-role">Cross-functional</div></td><td><div class="night-dots"><div class="dot">M</div><div class="dot">T</div><div class="dot empty">–</div><div class="dot empty">–</div></div></td><td style="text-align:center"><span class="night-count">2</span></td><td><span class="status-tag status-returning">Returning</span></td><td style="font-size:13px;color:var(--gray-600)">Primary role: Advising</td></tr>
+        <tr><td><div class="person-name">Kirsten</div><div class="person-role">Advisor</div></td><td><div class="night-dots"><div class="dot empty">–</div><div class="dot empty">–</div><div class="dot empty">–</div><div class="dot empty">–</div></div></td><td style="text-align:center"><span class="night-count zero">0</span></td><td><span class="status-tag status-returning">Returning</span></td><td style="font-size:13px;color:var(--gray-600)">Full-time Advising — no evening instruction</td></tr>
         <tr><td><div class="person-name">New FT Hire</div><div class="person-role">Learning Manager</div></td><td><div class="night-dots"><div class="dot">M</div><div class="dot">T</div><div class="dot">W</div><div class="dot">Th</div></div></td><td style="text-align:center"><span class="night-count">4</span></td><td><span class="status-tag status-new">To hire</span></td><td style="font-size:13px;color:var(--gray-600)">Heaviest load — set expectations at hiring</td></tr>
         <tr><td><div class="person-name">Brei</div><div class="person-role">—</div></td><td><div class="night-dots"><div class="dot empty">–</div><div class="dot empty">–</div><div class="dot empty">–</div><div class="dot empty">–</div></div></td><td style="text-align:center"><span class="night-count zero">0</span></td><td><span class="status-tag status-na">Not in model</span></td><td style="font-size:13px;color:var(--gray-600)">On leave; not counted</td></tr>
-        <tr class="totals-row"><td><strong>Total</strong></td><td></td><td style="text-align:center"><span class="night-count">12</span></td><td><span class="badge badge-green">360 students</span></td><td></td></tr>
+        <tr class="totals-row"><td><strong>Total</strong></td><td></td><td style="text-align:center"><span class="night-count">10</span></td><td><span class="badge badge-green">300 students</span></td><td></td></tr>
       </tbody>
     </table>
-    <div class="note-box"><strong>Fall note</strong>Lauren + New FT Hire carry the program through fall (6 of 12 slots). New hire is load-bearing from day one — strong onboarding is critical.</div>
-    <div class="trigger-box"><strong>PT hire trigger</strong>If enrollment hits 360 confirmed students by late September, bring on a PT manager at 1–2 nights. Identify this person in advance.</div>
+    <div class="note-box"><strong>Fall note</strong>Lauren + New FT Hire carry the program through fall (6 of 10 slots). New hire is load-bearing from day one — strong onboarding is critical. Kirsten is full-time Advising with no evening instruction.</div>
+    <div class="trigger-box"><strong>PT hire trigger</strong>If enrollment hits 300 confirmed students by late September, bring on a PT manager at 1–2 nights. Identify this person in advance.</div>
 
     <!-- JOB DESCRIPTIONS -->
     <div class="jd-section">
@@ -364,7 +377,7 @@ body { font-family: 'proxima-nova', 'DM Sans', sans-serif; background: var(--whi
         <div class="jd-body">
           <div class="jd-nights-note">📅 1 teaching night · ACT curriculum ownership · Saturday ACT prep series</div>
           <div class="jd-overview">
-            Aareena owns the quality and coherence of ACT instruction across BRYC's out-of-school program. With ACT prep expanding into 10th grade for the first time in Spring 2027, her role is to build a curriculum sequence that carries Fellows from their first exposure in 10th grade through their official ACT in 11th grade — and to ensure every facilitator who touches ACT content (Lauren, New FT Hire, Kirsten, and any subs) is equipped to deliver it well. She also leads BRYC's Saturday ACT Prep series, which generates revenue from the public while giving BRYC Fellows free access. Aareena operates as a peer to Chasity — with regular check-ins and shared ownership of the 10th–11th grade experience — rather than reporting up through the learning team.
+            Aareena owns the quality and coherence of ACT instruction across BRYC's out-of-school program. With ACT prep expanding into 10th grade for the first time in Spring 2027, her role is to build a curriculum sequence that carries Fellows from their first exposure in 10th grade through their official ACT in 11th grade — and to ensure every facilitator who touches ACT content (Lauren, New FT Hire, and any subs) is equipped to deliver it well. She also leads BRYC's Saturday ACT Prep series, which generates revenue from the public while giving BRYC Fellows free access. Aareena operates as a peer to Chasity — with regular check-ins and shared ownership of the 10th–11th grade experience — rather than reporting up through the learning team.
           </div>
           <div class="jd-grid">
             <div>
@@ -373,7 +386,7 @@ body { font-family: 'proxima-nova', 'DM Sans', sans-serif; background: var(--whi
                 <ul class="jd-duty-list">
                   <li>Develop and maintain a cohesive ACT curriculum sequence for 10th and 11th grade, ensuring intentional skill progression year over year; partner with Elin on scope and sequence design</li>
                   <li>Lead the introduction of ACT prep into 10th grade beginning Spring 2027 — establishing this as Fellows' baseline entering score for 11th grade</li>
-                  <li>Establish instructional consistency across all ACT cohorts; align with Lauren, New FT Hire, Kirsten, and any substitutes on content, pacing, and delivery standards</li>
+                  <li>Establish instructional consistency across all ACT cohorts; align with Lauren, New FT Hire, and any substitutes on content, pacing, and delivery standards</li>
                   <li>Explore partnerships (e.g., MasteryPrep) and resources that could strengthen BRYC's ACT programming</li>
                   <li>Target 17+ as the TOPS floor; BRYC's 21.6 average as the north star</li>
                 </ul>
@@ -381,7 +394,7 @@ body { font-family: 'proxima-nova', 'DM Sans', sans-serif; background: var(--whi
               <div class="jd-duty-group">
                 <div class="jd-duty-title">Build and Support ACT Facilitators</div>
                 <ul class="jd-duty-list">
-                  <li>Ensure Lauren, New FT Hire, Kirsten, and subs are equipped to teach ACT content — not just familiar with it</li>
+                  <li>Ensure Lauren, New FT Hire, and subs are equipped to teach ACT content — not just familiar with it</li>
                   <li>Develop a facilitator preparation protocol: here's the curriculum, here's how to internalize it, here's what good ACT facilitation looks like at BRYC</li>
                   <li>Serve as first-call backup when any ACT facilitator is unavailable</li>
                   <li>Facilitate 1 ACT night per week as a standing commitment, keeping her grounded in the Fellow experience</li>
@@ -828,10 +841,10 @@ body { font-family: 'proxima-nova', 'DM Sans', sans-serif; background: var(--whi
       <tbody>
         <tr><td><div class="person-name">Lauren</div><div class="person-role">Learning Manager</div></td><td><div class="night-dots"><div class="dot">M</div><div class="dot">T</div><div class="dot">W</div><div class="dot empty">–</div></div></td><td style="text-align:center"><span class="night-count">3</span></td><td><span class="status-tag status-returning">Returning FT</span></td><td style="font-size:13px;color:var(--gray-600)">Core anchor</td></tr>
         <tr><td><div class="person-name">Kendrick</div><div class="person-role">Learning Manager</div></td><td><div class="night-dots"><div class="dot">M</div><div class="dot">T</div><div class="dot">W</div><div class="dot empty">–</div></div></td><td style="text-align:center"><span class="night-count">3</span></td><td><span class="status-tag status-returning">Returning FT</span></td><td style="font-size:13px;color:var(--gray-600)">Staying FT ✓</td></tr>
-        <tr><td><div class="person-name">Kirsten</div><div class="person-role">Cross-functional</div></td><td><div class="night-dots"><div class="dot">M</div><div class="dot">T</div><div class="dot empty">–</div><div class="dot empty">–</div></div></td><td style="text-align:center"><span class="night-count">2</span></td><td><span class="status-tag status-returning">Returning</span></td><td style="font-size:13px;color:var(--gray-600)">Primary role: Advising</td></tr>
+        <tr><td><div class="person-name">Kirsten</div><div class="person-role">Advisor</div></td><td><div class="night-dots"><div class="dot empty">–</div><div class="dot empty">–</div><div class="dot empty">–</div><div class="dot empty">–</div></div></td><td style="text-align:center"><span class="night-count zero">0</span></td><td><span class="status-tag status-returning">Returning</span></td><td style="font-size:13px;color:var(--gray-600)">Full-time Advising — no evening instruction</td></tr>
         <tr><td><div class="person-name">New FT Hire</div><div class="person-role">Learning Manager</div></td><td><div class="night-dots"><div class="dot">M</div><div class="dot">T</div><div class="dot">W</div><div class="dot">Th</div></div></td><td style="text-align:center"><span class="night-count">4</span></td><td><span class="status-tag status-new">To hire</span></td><td style="font-size:13px;color:var(--gray-600)">Set expectations at hiring</td></tr>
         <tr><td><div class="person-name">Brei</div><div class="person-role">Learning Associate</div></td><td><div class="night-dots"><div class="dot">M</div><div class="dot empty">–</div><div class="dot empty">–</div><div class="dot empty">–</div></div></td><td style="text-align:center"><span class="night-count">1</span></td><td><span class="status-tag status-upside">Upside</span></td><td style="font-size:13px;color:var(--gray-600)">Out most of fall; spring only</td></tr>
-        <tr class="totals-row"><td><strong>Total</strong></td><td></td><td style="text-align:center"><span class="night-count">13</span></td><td><span class="badge badge-green">390 students</span></td><td></td></tr>
+        <tr class="totals-row"><td><strong>Total</strong></td><td></td><td style="text-align:center"><span class="night-count">11</span></td><td><span class="badge badge-green">330 students</span></td><td></td></tr>
       </tbody>
     </table>
     <div class="note-box"><strong>Fall note</strong>Treat fall as Scenario 1 — Brei's slot is spring upside only.</div>
